@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detecccion de monoplaza F1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Deteccion de monoplaza F1</h1>
+        <h3>Sube una imagen de un monoplaza de F1</h3>
+        <!-- Por el momento solo detecta redbull, mercedes, ferrari -->
+        <p>Actualmente solo detecta Redbull, Mercedes y Ferrari</p>
+        <input type="file" 
+            class="filepond"
+            name="filepond" 
+            data-allow-reorder="true"
+            data-max-file-size="3MB"
+            data-max-files="1" />
+        <button id="upload-button">Predecir</button>
+        <div id="loading" style="display: none;">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+        <!-- <div id="loading" style="display: none;">Realizando deteccion...</div> -->
+        <div id="result" style="display: none;">
+            <h2>Resultado</h2>
+            <p id="prediccion" style="display: none;"></p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+    <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script src="app.js"></script>
+  </body>
