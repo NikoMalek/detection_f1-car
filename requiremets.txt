@@ -1,4 +1,11 @@
+# Requisitos para el entrenamiento del modelo
+
 keras==3.4.1
 tensorflow==2.17.0
 numpy==1.26.4
 opencv-python
+
+# Requisitos para uso de la api
+
+flask
+flask-cors
