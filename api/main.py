@@ -7,7 +7,7 @@ from PIL import Image
 from io import BytesIO
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend', static_url_path='/')
 CORS(app)
 
 # Leer nuestro modelo
@@ -50,8 +50,12 @@ def upload_file():
         print(e)
         return jsonify({"error": "Error al procesar la imagen"}), 400
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route('/')
+def frontend():
+    return app.send_static_file('index.html')
+
+if __name__ == '__main__':  
+    app.run()
         
     
 

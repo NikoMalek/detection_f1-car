@@ -1,3 +1,5 @@
+const apiUrl = window.location.origin;
+
 FilePond.registerPlugin(
     FilePondPluginImagePreview,
     FilePondPluginImageExifOrientation,
@@ -42,8 +44,8 @@ document.getElementById('upload-button').addEventListener('click', () => {
     formData.append('file', file);
 
     document.getElementById('loading').style.display = 'block';
-    
-    fetch('http://127.0.0.1:5000/upload', {
+
+    fetch(`${apiUrl}/upload`, {
         method: 'POST',
         body: formData
     })
