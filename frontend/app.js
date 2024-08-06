@@ -1,3 +1,4 @@
+// const apiUrl = '/api';
 const apiUrl = window.location.origin;
 
 FilePond.registerPlugin(
